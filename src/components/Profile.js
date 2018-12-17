@@ -16,7 +16,7 @@ class Profile extends Component {
         axios.get('http://dummy.restapiexample.com/api/v1/employees')
             .then(response => this.setState({
                 isLoading:false,
-                profile:response.data
+                profile:response.data.slice(0,100)
             },()=>{
                 console.log(this.state.profile.length)
             }))
