@@ -16,7 +16,7 @@ class Profile extends Component {
         axios.get('http://dummy.restapiexample.com/api/v1/employees')
             .then(response => this.setState({
                 isLoading:false,
-                profile:response.data.slice(0,5)
+                profile:response.data
             },()=>{
                 console.log(this.state.profile.length)
             }))
@@ -93,6 +93,7 @@ class Profile extends Component {
         return(
             <View>
                 <TextInput
+                    placeholder={'Please enter ID in here'}
                     style={search_input}
                     onChangeText={this.inputHandler}
                 />
